@@ -383,6 +383,282 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ts、js自定义方法，实现延迟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/ts、js自定义方法，实现延迟/">ts、js自定义方法，实现延迟</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/ts、js自定义方法，实现延迟/" class="archive-article-date">
+  	<time datetime="2017-07-08T01:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+<p>ts、js自定义方法，实现延迟</p>
+<hr>
+
+<blockquote>
+<p>说明：下面的为TypeScript，转为JS很简单，将private变为function，let改为var，去掉变量和函数类型即可</p>
+</blockquote>
+<p>1、传入毫秒值，当小于该值时，一直执行for循环 </p>
+        
+          <a class="article-more-a" href="/2017/07/08/ts、js自定义方法，实现延迟/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		
+		<i class="icon-acfun icon"></i>
+		
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ts</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">延迟方法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/08/ts、js自定义方法，实现延迟/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3-nth-child-x-选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/13/CSS3-nth-child-x-选择器/">CSS3:nth-child(x) 选择器</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/13/CSS3-nth-child-x-选择器/" class="archive-article-date">
+  	<time datetime="2017-06-13T12:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+<blockquote>
+<p>第一次看到nth-child(x)(这位同学，其中x不是”x”是代表很多内容)，会不会很惊讶，如果不是做网页相关或者有“我要学习不要女朋友”这样的想法，一辈子都遇不到好吗？废话不说了，开始：</p>
+</blockquote>
+<p><hr><br>1、x为任意常数</p>
+<p>看W3C解释：表示属于其父元素的第x个子元素。<br>少年，不知道上面那句是什么意思？通俗点指所有此类标签同一级的第几个。觉得和没解释一样？没关系，我举个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;1:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;1:2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;2:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:2&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:3&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:4&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;3:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;3:2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/06/13/CSS3-nth-child-x-选择器/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		
+		<i class="icon-book icon"></i>
+		
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nth-child</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/13/CSS3-nth-child-x-选择器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-运行显示：……-substring-subString-subStr-is-not-a-function-……" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/29/运行显示：……-substring-subString-subStr-is-not-a-function-……/">运行显示：…… substring/subString/subStr is not a function ……</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/29/运行显示：……-substring-subString-subStr-is-not-a-function-……/" class="archive-article-date">
+  	<time datetime="2017-05-29T10:11:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+<p>问题：<br>当截取字符串时，报错，显示“……substring/subString/subStr is not a function……”</p>
+<hr>
+
+<p>解决方法：</p>
+<ol>
+<li><p>首先，得确定你会用这个方法，有两个类似的</p>
+        
+          <a class="article-more-a" href="/2017/05/29/运行显示：……-substring-subString-subStr-is-not-a-function-……/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		
+		<i class="icon-price-tags icon"></i>
+		
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">exception</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">subString</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/29/运行显示：……-substring-subString-subStr-is-not-a-function-……/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Oracle安装后只有三个服务项，少了最重要的监听等项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -421,7 +697,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-acfun icon"></i>
+		<i class="icon-tuding icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -510,7 +786,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-tuding icon"></i>
+		<i class="icon-price-tags icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -523,11 +799,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">localStorage</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">localStorage</a>
         		</li>
       		
 		</ul>
@@ -607,7 +883,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-smile icon"></i>
+		<i class="icon-price-tags icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -700,7 +976,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-acfun icon"></i>
+		<i class="icon-price-tags icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -878,7 +1154,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-book icon"></i>
+		<i class="icon-price-tags icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -965,7 +1241,7 @@ var _hmt = _hmt || [];
       
 	<div class="article-tag tagcloud">
 		
-		<i class="icon-book icon"></i>
+		<i class="icon-film icon"></i>
 		
 		<ul class="article-tag-list">
 			 
@@ -985,285 +1261,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/10/29/如果SQL-Server-配置管理器没有找到就代表安装失败？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-eclipse连接数据库时：“用户XX-登录失败”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/eclipse连接数据库时：“用户XX-登录失败”/">eclipse连接sql server数据库时：“用户XX 登录失败”</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/29/eclipse连接数据库时：“用户XX-登录失败”/" class="archive-article-date">
-  	<time datetime="2016-10-29T03:30:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-
-<p>eclipse连接数据库时：“用户XX 登录失败”</p>
-<hr>
-
-<p>首先，你要确定自己的语句没有写错，数据库名、账户名、密码写错的大有人在。<br>其次，一般来说驱动加载是基本没有问题的，出问题的大部分都在下面这一句：<br>“Conn=DriverManager.getConnection(dbURL,userName,userPwd);”</p>
-        
-          <a class="article-more-a" href="/2016/10/29/eclipse连接数据库时：“用户XX-登录失败”/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		
-		<i class="icon-price-tags icon"></i>
-		
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sql server</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">eclipse</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">连接失败</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/29/eclipse连接数据库时：“用户XX-登录失败”/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-通过实例了解如何使用js获取下拉列表框内的值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/23/通过实例了解如何使用js获取下拉列表框内的值/">通过实例了解如何使用js获取下拉列表框内的值</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/23/通过实例了解如何使用js获取下拉列表框内的值/" class="archive-article-date">
-  	<time datetime="2016-08-23T10:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-
-<blockquote>
-<p>先放上部分代码（主要为了了解如何获取值，不做样式）， 上部分为html代码段，下部分为js代码段</p>
-</blockquote>
-<hr>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--main.html--&gt;</span><br><span class="line"></span><br><span class="line">&lt;form name=&quot;t_form&quot; &gt;</span><br><span class="line">&lt;table &gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">    	&lt;td&gt;请选择姓名：&lt;/td&gt;</span><br><span class="line">   		&lt;td&gt;</span><br><span class="line">            &lt;select  id=&quot;selectT&quot; onchange=&quot;getNum(this.options[selectedIndex].value);&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;none&quot;&gt;--请选择--&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom1&quot;&gt;Tom1&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom2&quot;&gt;Tom2&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom3&quot;&gt;Tom3&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom4&quot;&gt;Tom4&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom5&quot;&gt;Tom5&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom6&quot;&gt;Tom6&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;Tom7&quot;&gt;Tom7&lt;/option&gt;</span><br><span class="line">			&lt;/select&gt;</span><br><span class="line">         &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    	&lt;td&gt;电话号码：&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;phoneNum&quot; disabled=&quot;disabled&quot;/&gt;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2016/08/23/通过实例了解如何使用js获取下拉列表框内的值/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		
-		<i class="icon-acfun icon"></i>
-		
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/23/通过实例了解如何使用js获取下拉列表框内的值/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-User-friendly" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/User-friendly/">User friendly</a>
-    </h1>
-  
-
-        
-        <a href="/2016/05/12/User-friendly/" class="archive-article-date">
-  	<time datetime="2016-05-12T13:53:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-
-<blockquote>
-<p>词：曼球<br>译：Sclifftop</p>
-</blockquote>
-<p><br></p>
-<h2 id="User-friendly"><a href="#User-friendly" class="headerlink" title="User friendly"></a>User friendly</h2><p>use me when you want to come</p>
-<blockquote>
-<p>当你想要的时候就来草我</p>
-</blockquote>
-<p>i’ve bled just to have your touch</p>
-<blockquote>
-<p>请尽情的抚摸我，我会为此做任何你想要的</p>
-</blockquote>
-<p>when i’m in you i want to die</p>
-<blockquote>
-<p>当我进入你的身体时，我感觉自己爽得像进入了天堂</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2016/05/12/User-friendly/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		
-		<i class="icon-bilibili icon"></i>
-		
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">曼球</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">译</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/12/User-friendly/">展开全文 >></a>
         </p>
       
 
@@ -1390,18 +1387,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bootstrap-table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">中文API</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -1410,7 +1395,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">获取表某行内容</a>
+                <a href="javascript:void(0)" class="js-tag color1">bootstrap-table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">获取表多行数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,7 +1407,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">获取表多行数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">获取表某行内容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">中文API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bootstrap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1443,6 +1440,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">呵呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">呵呵呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">呵呵呵呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">呵呵呵呵呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">呵呵呵呵呵呵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">呵呵呵呵呵呵呵</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1490,6 +1511,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">连接失败</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
@@ -1498,11 +1527,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+                <a href="javascript:void(0)" class="js-tag color3">ColorMatrixFilter</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">连接失败</a>
+                <a href="javascript:void(0)" class="js-tag color1">egret</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1558,11 +1587,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">createElement</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">很骚</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">exe4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">jar to exe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网页对战五子棋</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">egret wing 3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1579,14 +1624,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">切图工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网页对战五子棋</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">egret wing 3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1622,11 +1659,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">localStorage</a>
+                <a href="javascript:void(0)" class="js-tag color5">wxss</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">localStorage</a>
               </li>
              
               <li class="article-tag-list-item">

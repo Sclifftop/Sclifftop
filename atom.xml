@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sclifftop.com/"/>
-  <updated>2018-07-17T06:57:24.000Z</updated>
+  <updated>2018-11-15T10:15:29.863Z</updated>
   <id>https://www.sclifftop.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>呵，人类</title>
-    <link href="https://www.sclifftop.com/2888/05/12/My-heart-wear-black/"/>
-    <id>https://www.sclifftop.com/2888/05/12/My-heart-wear-black/</id>
-    <published>2888-05-12T14:16:47.000Z</published>
-    <updated>2018-07-17T06:57:24.000Z</updated>
+    <link href="https://www.sclifftop.com/2888/05/21/My-heart-wear-black/"/>
+    <id>https://www.sclifftop.com/2888/05/21/My-heart-wear-black/</id>
+    <published>2888-05-20T21:21:59.000Z</published>
+    <updated>2018-11-15T10:15:29.863Z</updated>
     
     <summary type="html">
     
@@ -29,6 +29,111 @@
     
     
       <category term="呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5/"/>
+    
+      <category term="呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5/"/>
+    
+      <category term="呵呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5%E5%91%B5/"/>
+    
+      <category term="呵呵呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5/"/>
+    
+      <category term="呵呵呵呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5/"/>
+    
+      <category term="呵呵呵呵呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5/"/>
+    
+      <category term="呵呵呵呵呵呵呵" scheme="https://www.sclifftop.com/tags/%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5%E5%91%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个没卵用的鼠标骚特效（也就是我现在的特效）</title>
+    <link href="https://www.sclifftop.com/2888/05/21/%E4%B8%80%E4%B8%AA%E6%B2%A1%E5%8D%B5%E7%94%A8%E7%9A%84%E9%BC%A0%E6%A0%87%E9%AA%9A%E7%89%B9%E6%95%88/"/>
+    <id>https://www.sclifftop.com/2888/05/21/一个没卵用的鼠标骚特效/</id>
+    <published>2888-05-20T21:21:00.000Z</published>
+    <updated>2018-11-15T10:13:10.790Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>之前在看一个老哥的博客看到一个比较骚的特效，就是当鼠标移动，后面跟着一条小尾巴，依次是富强、民主等等，于是自己就尝试写代码实现一下，所以我弄了个原生的js实现方法，如果使用jQuery代码更简单，想要我就写。<br>现在我这个就是使用了这个特效，想要的拿去，使用手机的话只有点击的时候才会出现</p></blockquote><hr><blockquote><p>如果你觉得太密了，可以改下延迟时间，嘤嘤</p></blockquote><p>先上代码</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">(function () &#123;</span><br><span class="line">//不赞成显式地使用Array构造函数来创建数组，也就是尽量不要用new Array()</span><br><span class="line">var arr = [&quot;富强&quot;, &quot;民主&quot;, &quot;文明&quot;, &quot;和谐&quot;, &quot;自由&quot;, &quot;平等&quot;, &quot;公正&quot;, &quot;法治&quot;, &quot;爱国&quot;, &quot;敬业&quot;, &quot;诚信&quot;, &quot;友善&quot;];</span><br><span class="line">var aIndex = 0;</span><br><span class="line">document.onmousemove = function (ev) &#123;</span><br><span class="line">var oEvent = ev ? ev : window.event;</span><br><span class="line">var tSpan = document.createElement(&apos;div&apos;);</span><br><span class="line">aIndex = (aIndex + 1) % arr.length;</span><br><span class="line">var sTxt = document.createTextNode(arr[aIndex]);</span><br><span class="line">tSpan.appendChild(sTxt);</span><br><span class="line">tSpan.style.left = (oEvent.clientX - 35) + &apos;px&apos;;</span><br><span class="line">tSpan.style.top = (oEvent.clientY - 20) + &apos;px&apos;;</span><br><span class="line">tSpan.style.position = &apos;absolute&apos;;</span><br><span class="line">tSpan.style.width = &apos;34px&apos;;</span><br><span class="line">tSpan.style.height = &apos;17px&apos;;</span><br><span class="line">tSpan.style.fontWeight = &quot;bold&quot;;</span><br><span class="line">tSpan.style.color = &quot;#2B9499&quot;;</span><br><span class="line">tSpan.style.fontSize = 20;</span><br><span class="line">tSpan.style.opacity = 0.76;</span><br><span class="line">tSpan.style.zIndex = 100000;</span><br><span class="line">document.body.appendChild(tSpan);</span><br><span class="line">setTimeout(function () &#123;</span><br><span class="line">document.body.removeChild(tSpan);</span><br><span class="line">&#125;, 380)</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><hr><p>稍微解释一下：</p><p>1、首先使用的是立即执行函数，这个表示直接调用执行<br>2、然后添加了事件监听<code>onmousemove</code>，当鼠标移动时就执行<br>3、<code>aIndex</code>每次加1，取<code>arr</code>元素，你也可以写成随机来取，要放到监听外，不然每次都会置0，就只能取“民主”<br>4、首先使用<code>document.createElement()</code>来创建<code>div</code>元素，然后使用<code>document.createTextNode()</code>来创建新文本节点，参数是要插入的文本，然后将文本节点插入<code>div</code>，然后把<code>div</code>插入<code>body</code><br>5、然后就是对一些样式的修改，对文本样式修改不要对<code>sTxt</code>来改，对<code>div</code>来改，还有<code>zIndex</code>表示堆叠顺序，越大越靠前<br>6、也设了一个定时器，380ms移除插入<code>body</code>的<code>div</code>元素，不然就会一直存在<br>7、如果太烦，可以将<code>onmousemove</code>换成<code>onmousedown</code>之类的事件，这样就会变成点击的时候出现，试一下</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;之前在看一个老哥的博客看到一个比较骚的特效，就是当鼠标移动，后面跟着一条小尾巴，依次是富强、民主等等，于是自己就尝试写代码实现一下，所以我弄了个原生的js实现方法，如果使用jQuery代码更简单，想要我就写。&lt;br&gt;现在我这个就是使用了这个特效，想要的拿去，使用手机的话只有点击的时候才会出现&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如果你觉得太密了，可以改下延迟时间，嘤嘤&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;先上代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="https://www.sclifftop.com/tags/js/"/>
+    
+      <category term="createElement" scheme="https://www.sclifftop.com/tags/createElement/"/>
+    
+      <category term="很骚" scheme="https://www.sclifftop.com/tags/%E5%BE%88%E9%AA%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序在编辑器上样式正常，但在手机上不显示样式</title>
+    <link href="https://www.sclifftop.com/2018/11/15/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8A%E6%A0%B7%E5%BC%8F%E6%AD%A3%E5%B8%B8%EF%BC%8C%E4%BD%86%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%A0%B7%E5%BC%8F/"/>
+    <id>https://www.sclifftop.com/2018/11/15/微信小程序在编辑器上样式正常，但在手机上不显示样式/</id>
+    <published>2018-11-15T09:51:53.000Z</published>
+    <updated>2018-11-15T09:59:21.272Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>之前做了个小工具，最近有时间，就加了页面，在编辑器上的<code>wxss</code>样式是正常的，但在手机上预览就无法显示 </p></blockquote><hr><blockquote><p>我目前只发现了一个颜色问题，但产生问题的真正原因没去仔细研究，所以以后遇到其他的研究下再写上来</p></blockquote><p>解决方法：</p><a id="more"></a><ol><li>原因：其他都生效，只是颜色无法正常显示</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">◇   颜色无法生效大部分原因是因为用了8位的argb `如 #1db0b87e`，而不是6位的rgb `如 #b0b87e`，如果你想改变透明度，可以换种写法`rgba(255,0,0,1)`颜色无法生效大部分原因是因为用了8位的argb `如 #1db0b87e`，而不是6位的rgb `如 #b0b87e`，如果你想改变透明度，可以换种写法`rgba(255,0,0,1)`</span><br></pre></td></tr></table></figure><ol><li>待续……</li></ol><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;之前做了个小工具，最近有时间，就加了页面，在编辑器上的&lt;code&gt;wxss&lt;/code&gt;样式是正常的，但在手机上预览就无法显示 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我目前只发现了一个颜色问题，但产生问题的真正原因没去仔细研究，所以以后遇到其他的研究下再写上来&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="微信小程序" scheme="https://www.sclifftop.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="wxss" scheme="https://www.sclifftop.com/tags/wxss/"/>
+    
+      <category term="css" scheme="https://www.sclifftop.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>egret使图片或各种控件变灰</title>
+    <link href="https://www.sclifftop.com/2018/10/09/egret%E4%BD%BF%E5%9B%BE%E7%89%87%E6%88%96%E5%90%84%E7%A7%8D%E6%8E%A7%E4%BB%B6%E5%8F%98%E7%81%B0/"/>
+    <id>https://www.sclifftop.com/2018/10/09/egret使图片或各种控件变灰/</id>
+    <published>2018-10-09T04:00:59.000Z</published>
+    <updated>2018-11-15T10:03:12.652Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>使用 <code>ColorMatrixFilter</code> 类可以将 4 x 5 矩阵转换应用于输入图像上的每个像素的 RGBA 颜色和 Alpha 值，以生成具有一组新的 RGBA 颜色和 Alpha 值的结果。该类允许饱和度更改、色相旋转、亮度为 Alpha 以及各种其他效果。</p></blockquote><hr><blockquote><p>使用这个类使控件不可用时变灰，可以不用出灰色的图片资源，下面仅仅变灰，其他不说</p></blockquote><a id="more"></a><p>灰色矩阵：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let colorGrayMatrix = [</span><br><span class="line">    0.3,  0.6,  0,  0,  0,</span><br><span class="line">    0.3,  0.6,  0,  0,  0,</span><br><span class="line">    0.3,  0.6,  0,  0,  0,</span><br><span class="line">     0,    0,   0,  1,  0</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p><p>实现功能的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">. . . . . . . .省略. . . . . . . .</span><br><span class="line"></span><br><span class="line">  let colorFilter: egret.ColorMatrixFilter = new egret.ColorMatrixFilter(colorGrayMatrix);</span><br><span class="line"> (&lt;eui.Image&gt;uiObj[&quot;boxImg&quot;]).filters = [colorFilter];</span><br><span class="line"> </span><br><span class="line">. . . . . . . .省略. . . . . . . .</span><br></pre></td></tr></table></figure></p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;使用 &lt;code&gt;ColorMatrixFilter&lt;/code&gt; 类可以将 4 x 5 矩阵转换应用于输入图像上的每个像素的 RGBA 颜色和 Alpha 值，以生成具有一组新的 RGBA 颜色和 Alpha 值的结果。该类允许饱和度更改、色相旋转、亮度为 Alpha 以及各种其他效果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;使用这个类使控件不可用时变灰，可以不用出灰色的图片资源，下面仅仅变灰，其他不说&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="ColorMatrixFilter" scheme="https://www.sclifftop.com/tags/ColorMatrixFilter/"/>
+    
+      <category term="egret" scheme="https://www.sclifftop.com/tags/egret/"/>
     
   </entry>
   
@@ -235,9 +340,9 @@
     
       <category term="bootstrap-table" scheme="https://www.sclifftop.com/tags/bootstrap-table/"/>
     
-      <category term="jQuery" scheme="https://www.sclifftop.com/tags/jQuery/"/>
-    
       <category term="获取表多行数据" scheme="https://www.sclifftop.com/tags/%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%A4%9A%E8%A1%8C%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="jQuery" scheme="https://www.sclifftop.com/tags/jQuery/"/>
     
   </entry>
   
@@ -557,101 +662,9 @@
     
       <category term="bootstrap-table" scheme="https://www.sclifftop.com/tags/bootstrap-table/"/>
     
-      <category term="获取表某行内容" scheme="https://www.sclifftop.com/tags/%E8%8E%B7%E5%8F%96%E8%A1%A8%E6%9F%90%E8%A1%8C%E5%86%85%E5%AE%B9/"/>
-    
       <category term="jQuery" scheme="https://www.sclifftop.com/tags/jQuery/"/>
     
-  </entry>
-  
-  <entry>
-    <title>ts、js自定义方法，实现延迟</title>
-    <link href="https://www.sclifftop.com/2017/07/08/ts%E3%80%81js%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%BB%B6%E8%BF%9F/"/>
-    <id>https://www.sclifftop.com/2017/07/08/ts、js自定义方法，实现延迟/</id>
-    <published>2017-07-08T01:00:48.000Z</published>
-    <updated>2018-05-31T13:00:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>ts、js自定义方法，实现延迟</p><hr><blockquote><p>说明：下面的为TypeScript，转为JS很简单，将private变为function，let改为var，去掉变量和函数类型即可</p></blockquote><p>1、传入毫秒值，当小于该值时，一直执行for循环 </p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private getSleep(sleepTime: number = 0): void &#123;</span><br><span class="line">         for (let t = Date.now(); Date.now() - t &lt;= sleepTime;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2、和上面的方法一模一样，不过是用while循环</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private getSleep(sleepTime: number = 0): void &#123;</span><br><span class="line">            let oldTime = new Date().getTime();</span><br><span class="line">            let newTime = oldTime + sleepTime;</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                oldTime = new Date().getTime();</span><br><span class="line">                if (oldTime &gt; newTime)</span><br><span class="line">                    return;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><ul><li>以上自定义方法是一直等待，等时间到了才可以继续执行下去，用于一些简单的作业</li><li>如果是项目，一定别用循环等待，没到时间会“卡死”，要用判断是否符合条件，不符合就return的方法，不然你哥肯定会骂你一顿，你还是得重写。</li></ul><hr><p>What I’m gonna do to you.<br><br><br></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-
-&lt;p&gt;ts、js自定义方法，实现延迟&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;说明：下面的为TypeScript，转为JS很简单，将private变为function，let改为var，去掉变量和函数类型即可&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;1、传入毫秒值，当小于该值时，一直执行for循环 &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="js" scheme="https://www.sclifftop.com/tags/js/"/>
-    
-      <category term="ts" scheme="https://www.sclifftop.com/tags/ts/"/>
-    
-      <category term="延迟方法" scheme="https://www.sclifftop.com/tags/%E5%BB%B6%E8%BF%9F%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS3:nth-child(x) 选择器</title>
-    <link href="https://www.sclifftop.com/2017/06/13/CSS3-nth-child-x-%E9%80%89%E6%8B%A9%E5%99%A8/"/>
-    <id>https://www.sclifftop.com/2017/06/13/CSS3-nth-child-x-选择器/</id>
-    <published>2017-06-13T12:04:52.000Z</published>
-    <updated>2018-05-31T12:56:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><blockquote><p>第一次看到nth-child(x)(这位同学，其中x不是”x”是代表很多内容)，会不会很惊讶，如果不是做网页相关或者有“我要学习不要女朋友”这样的想法，一辈子都遇不到好吗？废话不说了，开始：</p></blockquote><p><hr><br>1、x为任意常数</p><p>看W3C解释：表示属于其父元素的第x个子元素。<br>少年，不知道上面那句是什么意思？通俗点指所有此类标签同一级的第几个。觉得和没解释一样？没关系，我举个例子：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p:nth-child(2)</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;1:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;1:2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;2:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:2&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:3&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;2:4&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;3:1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;3:2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><a id="more"></a><p>运行后如下：<br><img src="http://img.blog.csdn.net/20170613221651093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU19jbGlmZnRvcA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="运行结果"></p><p>注意：<br>我也试了如下的样式：<br><code>div:nth-child(2){background:#ff0000;}</code><br>如果同级有h1-h6、p等块级元素，也会算做div，没有深入，只是提出来，如果错了可以给我说一声。<hr></p><p>2、x为odd、even</p><p>看W3C解释：odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）。<br>说到这就不用贴图了吧，如果选择的元素连续，背景色设odd为白，even为黑，可以想一下黑白相间，不要想大熊猫！！<hr></p><p>3、x为(an+b)<br>W3C解释：表示周期的长度，n 是计数器（从 0 开始），b 是偏移值。<br>如果x为(3n+2)，那么改变样式的标签为第2、5、8、11……这个很容易理解。<hr></p><p>注意：<br>就如前面所说，如果同级有h1-h6、div、p等块级元素，会算作相同的元素。<br>打个比方：你只想查一列中黑人（div）的数量，同级插入了一个白人（p），你也会算进去，而不是只数黑人，比喻都是不恰当的，知道大体意思就好。</p><p>好了，看到这你也学会了，学无止境，如果有错误，请指出，谢谢，老铁双击666没毛病<br><br><br></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;第一次看到nth-child(x)(这位同学，其中x不是”x”是代表很多内容)，会不会很惊讶，如果不是做网页相关或者有“我要学习不要女朋友”这样的想法，一辈子都遇不到好吗？废话不说了，开始：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;hr&gt;&lt;br&gt;1、x为任意常数&lt;/p&gt;
-&lt;p&gt;看W3C解释：表示属于其父元素的第x个子元素。&lt;br&gt;少年，不知道上面那句是什么意思？通俗点指所有此类标签同一级的第几个。觉得和没解释一样？没关系，我举个例子：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;p:nth-child(2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;background:#ff0000;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;1:1&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;1:2&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;2:1&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;2:2&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;2:3&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;2:4&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;3:1&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;p&amp;gt;3:2&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="css3" scheme="https://www.sclifftop.com/tags/css3/"/>
-    
-      <category term="nth-child" scheme="https://www.sclifftop.com/tags/nth-child/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>运行显示：…… substring/subString/subStr is not a function ……</title>
-    <link href="https://www.sclifftop.com/2017/05/29/%E8%BF%90%E8%A1%8C%E6%98%BE%E7%A4%BA%EF%BC%9A%E2%80%A6%E2%80%A6-substring-subString-subStr-is-not-a-function-%E2%80%A6%E2%80%A6/"/>
-    <id>https://www.sclifftop.com/2017/05/29/运行显示：……-substring-subString-subStr-is-not-a-function-……/</id>
-    <published>2017-05-29T10:11:40.000Z</published>
-    <updated>2018-05-31T13:05:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>问题：<br>当截取字符串时，报错，显示“……substring/subString/subStr is not a function……”</p><hr><p>解决方法：</p><ol><li><p>首先，得确定你会用这个方法，有两个类似的</p><a id="more"></a><p>◇ <code>substr(start,length)</code>，第一个参数是起始的index，后面的是要截取的长度<br>◇ <code>substring(start,to)</code>，第一个参数是起始的index，后面的是截到的index，这两个别混了</p></li><li><p>如果定义了一个方法，先检查一下你所传入的对象是不是”字符串”类型的</p><p>◇  通常检查不仔细时传入的是其他类型，如数组中你定义或存放的其他类型（<code>json[0].wo_zui_shuai</code>），所以要先用<code>toString()</code>或其他方法转换为string类型</p></li><li><p>如果提示的是什么”subStr /subString is not a function……”</p><p>◇  那就要检查一下自定义方法名是否写错<br>◇  检查了方法名没有写错，那就要检查位置放的对不对（就好像引入jQuery，bootstrap等文件时的先后顺序一样），如果用到jQuery，看是否在<code>$(document).ready(function() {}</code>内引用定义了此方法</p></li></ol><hr><p>一些低级错误也很多，像漏写参数（参数个数无关，只是参数顺序要对），上传错文件等等，虽然低级，但是检查不出来还是会浪费你的时间，尽量注意，有其他的情况会再补充</p><p><hr><br><br>吃一堑，魔高一丈<br><br><br></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-
-&lt;p&gt;问题：&lt;br&gt;当截取字符串时，报错，显示“……substring/subString/subStr is not a function……”&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;p&gt;解决方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先，得确定你会用这个方法，有两个类似的&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="js" scheme="https://www.sclifftop.com/tags/js/"/>
-    
-      <category term="exception" scheme="https://www.sclifftop.com/tags/exception/"/>
-    
-      <category term="subString" scheme="https://www.sclifftop.com/tags/subString/"/>
+      <category term="获取表某行内容" scheme="https://www.sclifftop.com/tags/%E8%8E%B7%E5%8F%96%E8%A1%A8%E6%9F%90%E8%A1%8C%E5%86%85%E5%AE%B9/"/>
     
   </entry>
   
