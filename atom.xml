@@ -77,6 +77,35 @@
   </entry>
   
   <entry>
+    <title>Android之Actvity的Flags及作用</title>
+    <link href="https://www.sclifftop.com/2018/11/27/Android%E4%B9%8BActvity%E7%9A%84Flags%E5%8F%8A%E4%BD%9C%E7%94%A8/"/>
+    <id>https://www.sclifftop.com/2018/11/27/Android之Actvity的Flags及作用/</id>
+    <published>2018-11-27T07:21:35.000Z</published>
+    <updated>2018-11-29T07:28:02.837Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Activity的Flags有很多，这些标记位用来设定Activity的启动模式，一般来说除一些特殊情况外不需要为Activity设置标记位</p></blockquote><hr><p>常用的几种：<br><a id="more"></a></p><ol><li><code>FLAG_ACTIVITY_NEW_TASK</code><br>◇   这个标记位的作用是为Activity指定<code>singleTask</code>启动模式，和在XML中的<code>android:launchMode=&quot;singleTask&quot;</code>一样，如果指定<code>taskAffinity</code>的Activity存在，则移到栈顶，不存在则创建<br>◇   注：默认情况下，一个应用中的所有activity具有相同的<code>taskAffinity</code>，即应用程序的包名</li><li><code>FLAG_ACTIVITY_SINGLE_TOP</code><br> ◇   这个标记位的作用是为Activity指定<code>singleTop</code>启动模式，和在XML中的<code>android:launchMode=&quot;singleTop&quot;</code>一样，如果已有则不创建，否则创建</li><li><code>FLAG_ACTIVITY_CLEAR_TOP</code><br> ◇   这个标记位一般会和singleTask启动模式一起出现，被启动Activity的实例如果已经存在，那么系统就会调用它的<code>onNewIntent</code>，如果<code>android:launchMode=&quot;standard&quot;</code>，那么它自己也会出栈，然后再创建新的Activity实例并放入栈顶</li></ol><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Activity的Flags有很多，这些标记位用来设定Activity的启动模式，一般来说除一些特殊情况外不需要为Activity设置标记位&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+&lt;p&gt;常用的几种：&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://www.sclifftop.com/tags/Android/"/>
+    
+      <category term="flags" scheme="https://www.sclifftop.com/tags/flags/"/>
+    
+      <category term="启动模式" scheme="https://www.sclifftop.com/tags/%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>微信小程序在编辑器上样式正常，但在手机上不显示样式</title>
     <link href="https://www.sclifftop.com/2018/11/15/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8A%E6%A0%B7%E5%BC%8F%E6%AD%A3%E5%B8%B8%EF%BC%8C%E4%BD%86%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%A0%B7%E5%BC%8F/"/>
     <id>https://www.sclifftop.com/2018/11/15/微信小程序在编辑器上样式正常，但在手机上不显示样式/</id>
@@ -102,9 +131,9 @@
     
       <category term="微信小程序" scheme="https://www.sclifftop.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
-      <category term="css" scheme="https://www.sclifftop.com/tags/css/"/>
-    
       <category term="wxss" scheme="https://www.sclifftop.com/tags/wxss/"/>
+    
+      <category term="css" scheme="https://www.sclifftop.com/tags/css/"/>
     
   </entry>
   
@@ -468,9 +497,9 @@
     
       <category term="bootstrap-table" scheme="https://www.sclifftop.com/tags/bootstrap-table/"/>
     
-      <category term="定时刷新" scheme="https://www.sclifftop.com/tags/%E5%AE%9A%E6%97%B6%E5%88%B7%E6%96%B0/"/>
-    
       <category term="jQuery" scheme="https://www.sclifftop.com/tags/jQuery/"/>
+    
+      <category term="定时刷新" scheme="https://www.sclifftop.com/tags/%E5%AE%9A%E6%97%B6%E5%88%B7%E6%96%B0/"/>
     
   </entry>
   
@@ -632,39 +661,6 @@
       <category term="windows" scheme="https://www.sclifftop.com/tags/windows/"/>
     
       <category term="pomelo环境" scheme="https://www.sclifftop.com/tags/pomelo%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bootstrap Table 双击、单击行获取该行内容及获取全表的内容</title>
-    <link href="https://www.sclifftop.com/2017/07/09/Bootstrap-Table-%E5%8F%8C%E5%87%BB%E3%80%81%E5%8D%95%E5%87%BB%E8%A1%8C%E8%8E%B7%E5%8F%96%E8%AF%A5%E8%A1%8C%E5%86%85%E5%AE%B9%E5%8F%8A%E8%8E%B7%E5%8F%96%E5%85%A8%E8%A1%A8%E7%9A%84%E5%86%85%E5%AE%B9/"/>
-    <id>https://www.sclifftop.com/2017/07/09/Bootstrap-Table-双击、单击行获取该行内容及获取全表的内容/</id>
-    <published>2017-07-09T09:57:14.000Z</published>
-    <updated>2018-05-31T12:54:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>Bootstrap Table 获取单击或双击的行内容</p><hr><blockquote><p>说明：看到这个应该就知道了bootstrap table的用法及如何使用了，所以下面的名称就不介绍了</p></blockquote><ul><li><p>realTime_Table是表的id</p><a id="more"></a>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#realTime_Table&quot;).bootstrapTable(&#123;</span><br><span class="line"></span><br><span class="line">//还是稍微介绍一下吧，这些注释是额外的，要加钱</span><br><span class="line">//是否显示查找</span><br><span class="line">            search: false,</span><br><span class="line">            //是否分页</span><br><span class="line">            pagination: false,</span><br><span class="line">            //每页显示多少条数据，也就是要显示多少行</span><br><span class="line">            pageSize: 15,</span><br><span class="line">            //分页，选择不同数字会改变上面的pageSize</span><br><span class="line">            pageList: [5, 10, 15, 20],</span><br><span class="line">            //显示列</span><br><span class="line">            showColumns: true,</span><br><span class="line">            //显示刷新按钮</span><br><span class="line">            showRefresh: false,</span><br><span class="line">            //是否可见</span><br><span class="line">            showToggle: true,</span><br><span class="line">            //默认英文，设置如下就是显示中文</span><br><span class="line">            locale: &quot;zh-CN&quot;,</span><br><span class="line">            //显示时background-color白灰相间</span><br><span class="line">            striped: true,</span><br><span class="line">       </span><br><span class="line">/*</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*下面才是本文要介绍的，其他都是额外的，包括这句话</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//=======================================================================================</span><br><span class="line">            //双击触发的事件，当双击就会获取row，row就是该整行的内容，其中&quot;row.playerName&quot;中&quot;playerName&quot;是data-field定义的字段，（如果在js中定义，就是field定义的字段,）可以通过该方法获取该行所有列的值</span><br><span class="line">            onDblClickRow: function (row) &#123;</span><br><span class="line">                console.log(&quot;click:&quot; + row.playerName)</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            //=======================================================================================</span><br><span class="line">            //如果想单击获取row，把onDblClickRow改为onClickRow，如下</span><br><span class="line">            //onClickRow: function (row) &#123;</span><br><span class="line">            //      console.log(&quot;click:&quot; + row.playerName)</span><br><span class="line">            //  &#125;</span><br><span class="line"></span><br><span class="line">//=======================================================================================</span><br><span class="line">//想获取全表的内容，只要用下面的方法,其中allTableData是个数组，整张表的内容，你可以使用遍历获取每行的内容，也可以使用索引直接获取你想要的那行的内容</span><br><span class="line">var indexTemp = 0;</span><br><span class="line">var playerNameTemp = &apos;张小帅&apos;;</span><br><span class="line">var allTableData = $(&apos;#realTime_Table&apos;).bootstrapTable(&apos;getData&apos;);</span><br><span class="line">for(var i = 0; i &lt; allTableData.length; i++) &#123;</span><br><span class="line">                        indexTemp = i;</span><br><span class="line">                        //如果此行中有玩家名字（此处默认名字不重复）与你想获取的相同，则跳出循环，indexTemp是你要的行索引</span><br><span class="line">                        if(allTableData[i].playerName == playerNameTemp) &#123;</span><br><span class="line">                         break;</span><br><span class="line">               &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             console.log(&quot;玩家张小帅的数据在表的第&quot; + (indexTemp + 1) + &quot;行&quot;);</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li></ul><hr><p>题外：关于表字段设置，可以查看：<a href="http://bootstrap-table.wenzhixin.net.cn/getting-started/ " target="_blank">点击Bootstrap-table的右侧边栏Usage跳到最下面</a>，有两种方法，一种是在声明表属性中设置，另一种是在js中设置</p><hr><p>其他相关：</p><ul><li>BootstrapTable API 中文版  <a href="http://blog.csdn.net/S_clifftop/article/details/77937356" target="_blank" rel="noopener">http://blog.csdn.net/S_clifftop/article/details/77937356</a></li><li>BootstrapTable实现定时刷新数据  <a href="http://blog.csdn.net/s_clifftop/article/details/77744791" target="_blank" rel="noopener">http://blog.csdn.net/s_clifftop/article/details/77744791</a></li></ul><p><br><br></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-
-&lt;p&gt;Bootstrap Table 获取单击或双击的行内容&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;说明：看到这个应该就知道了bootstrap table的用法及如何使用了，所以下面的名称就不介绍了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;realTime_Table是表的id&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="bootstrap-table" scheme="https://www.sclifftop.com/tags/bootstrap-table/"/>
-    
-      <category term="jQuery" scheme="https://www.sclifftop.com/tags/jQuery/"/>
-    
-      <category term="获取表某行内容" scheme="https://www.sclifftop.com/tags/%E8%8E%B7%E5%8F%96%E8%A1%A8%E6%9F%90%E8%A1%8C%E5%86%85%E5%AE%B9/"/>
     
   </entry>
   
