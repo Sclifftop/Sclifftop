@@ -77,6 +77,32 @@
   </entry>
   
   <entry>
+    <title>利Tween实现类似抛物线的效果</title>
+    <link href="https://www.sclifftop.com/2018/12/28/%E5%88%A9Tween%E5%AE%9E%E7%8E%B0%E7%B1%BB%E4%BC%BC%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E6%95%88%E6%9E%9C/"/>
+    <id>https://www.sclifftop.com/2018/12/28/利Tween实现类似抛物线的效果/</id>
+    <published>2018-12-28T07:18:42.000Z</published>
+    <updated>2019-01-03T07:22:54.333Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>开发游戏免不了实现一些看起来吸引人的需求，所以最近就做了一个飙血的动画，刚开始使用的链式，但是太多，效果也不好<br>我也是参考很多贴子做的，所以就写转载了，写出来主要是为了别人知道这个怎么实现<br>不懂的私我，有时间就会帮忙<br>使用的白鹭引擎，但基本差不多，只看实现方法就好</p></blockquote><a id="more"></a><blockquote><p><code>TweenMax</code>自带bezier，参数只要写路径数组就好了，这边不说</p></blockquote><p><hr><br>上代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//实现血量呈抛物线的tween</span><br><span class="line">private doTween()&#123;</span><br><span class="line">egret.Tween.get(this).to(&#123; scaleX: 2.2, scaleY: 2.2, alpha: 1 &#125;, 80)</span><br><span class="line">.to(&#123; scaleX: 0.9, scaleY: 0.9, parabola: 1, alpha: 0.7 &#125;, 650)</span><br><span class="line">.call(this.tweenComplete, this, []);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public get parabola(): number &#123;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public set parabola(num: number) &#123;</span><br><span class="line">this.bitmapText.x = (1 - num) * (1 - num) * 3 + 2 * value * (1 - num) * 26 + num * num * 43;</span><br><span class="line">this.bitmapText.y = (1 - num) * (1 - num) * (-7) + 2 * value * (1 - num) * (-100) + num * num* 17;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><hr><br>稍微说一下：</p><p>1、这个相对于中心点开始飙血，根据三个坐标行成一个运动的抛物线，看起来像往后抛东西<br>2、从最小值逐渐趋于传入的参数，是闭区间<br>3、如果你不用负号，上面的y坐标只要按相反的来赋值就好了，上面的坐标为（3，7），（26，100），（43，-17）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;开发游戏免不了实现一些看起来吸引人的需求，所以最近就做了一个飙血的动画，刚开始使用的链式，但是太多，效果也不好&lt;br&gt;我也是参考很多贴子做的，所以就写转载了，写出来主要是为了别人知道这个怎么实现&lt;br&gt;不懂的私我，有时间就会帮忙&lt;br&gt;使用的白鹭引擎，但基本差不多，只看实现方法就好&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="egret" scheme="https://www.sclifftop.com/tags/egret/"/>
+    
+      <category term="tween" scheme="https://www.sclifftop.com/tags/tween/"/>
+    
+      <category term="抛物线" scheme="https://www.sclifftop.com/tags/%E6%8A%9B%E7%89%A9%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android之Actvity的Flags及作用</title>
     <link href="https://www.sclifftop.com/2018/11/27/Android%E4%B9%8BActvity%E7%9A%84Flags%E5%8F%8A%E4%BD%9C%E7%94%A8/"/>
     <id>https://www.sclifftop.com/2018/11/27/Android之Actvity的Flags及作用/</id>
@@ -129,11 +155,11 @@
     </summary>
     
     
+      <category term="css" scheme="https://www.sclifftop.com/tags/css/"/>
+    
       <category term="微信小程序" scheme="https://www.sclifftop.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
       <category term="wxss" scheme="https://www.sclifftop.com/tags/wxss/"/>
-    
-      <category term="css" scheme="https://www.sclifftop.com/tags/css/"/>
     
   </entry>
   
@@ -622,45 +648,6 @@
       <category term="曼球" scheme="https://www.sclifftop.com/tags/%E6%9B%BC%E7%90%83/"/>
     
       <category term="译" scheme="https://www.sclifftop.com/tags/%E8%AF%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows下搭建pomelo开发环境</title>
-    <link href="https://www.sclifftop.com/2017/08/02/Windows%E4%B8%8B%E6%90%AD%E5%BB%BApomelo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://www.sclifftop.com/2017/08/02/Windows下搭建pomelo开发环境/</id>
-    <published>2017-08-01T23:02:35.000Z</published>
-    <updated>2018-06-13T07:13:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><blockquote><p>Pomelo 是基于 Node.js 的高性能、分布式游戏服务器框架。它包括基础的开发框架和相关的扩展组件（库和工具包），可以帮助你省去游戏开发枯燥中的重复劳动和底层逻辑的开发。以上为百度，我综合了很多，写一个比较全的搭建开发环境的步骤，下面开始介绍安装什么，该怎么安装，以及安装后怎么运行和关闭。</p></blockquote><hr><ul><li>老规矩，先放所需要的链接，后面还会重复： <ul><li>Python :<a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">https://www.python.org/downloads/windows/</a> 。</li><li>Node.js：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> 。</li><li>Git：<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a> 。（如果下载不动，用我的百度云盘[最新更新日期17.8.4，Git版本Git_2.14.0.2]：<a href="http://pan.baidu.com/s/1i5j7i9B" target="_blank" rel="noopener">http://pan.baidu.com/s/1i5j7i9B</a>  密码：83e9）</li></ul></li></ul><hr><p>先输入命令行检查一下是否有安装过：</p><a id="more"></a><pre><code>node -v、python -V、git --version（前面两个v是区分大小写，查看git版本两个&quot;-&quot;）。</code></pre><p>若都有显示出版本号，则均已安装，请跳到步骤5。</p><hr><p>1、安装Node.js（安装后就检查一下版本号，若没有显示，则安装失败，下同）：</p><ul><li>网址下载：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> ，安装步骤太简单，参考百度安装教程：<a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html</a> 。</li></ul><p>2、安装Python：</p><ul><li>网址下载：<a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">https://www.python.org/downloads/windows/</a> ，参考百度安装教程：<a href="http://jingyan.baidu.com/article/7908e85c78c743af491ad261.html" target="_blank" rel="noopener">http://jingyan.baidu.com/article/7908e85c78c743af491ad261.html</a> 。</li></ul><p>3、关于VC++编译器</p><ul><li>GitHub：”VC++ 编译器，包含在Visual Studio 2010中（VC++ 2010 Express亦可）。”，因为有vs2013，自然有编译器，所有就没考虑该步。</li></ul><p>4、安装Git：</p><ul><li>网址下载：<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a> （如果下载不动，用我的百度云盘[最新更新日期17.8.4，Git版本Git_2.14.0.2]：<a href="http://pan.baidu.com/s/1i5j7i9B" target="_blank" rel="noopener">http://pan.baidu.com/s/1i5j7i9B</a>  密码：83e9），参考廖先森的Git教程：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a> 。</li></ul><p>5、安装component：</p><ul><li>运行命令行，输入：”npm install -g component” 。</li></ul><p>6、安装pomelo：</p><ul><li>输入：”npm install -g pomelo” 。</li><li>然后检查一下：”pomelo –version”（两个”-“哦），若显示版本号，则安装成功。</li></ul><p>7、创建pomelo项目：</p><ul><li>看一下命令行所在文件目录，就是前面那一串，如果你想在当前目录创建则不改变，若想自定义则进入你想创建该项目的目录。</li><li>输入”mkdir first_project”。</li><li>然后进入该文件夹，输入”pomelo init”。</li><li>选择你想的那个connector（输入1-6）（如果不懂6项不同协议的connector，没关系，先选1，这只是一个项目，可以以后了解了再改，先确保怎么安装配置）。</li><li>再输入”npm-install.bat”。    </li></ul><p>8、启动服务端</p><ul><li>执行上步后，已经在game-server文件夹下了。</li><li>输入”pomelo start “启动。</li></ul><p>9、再开启一个命令行窗口：</p><ul><li>进入你之前创建的项目文件夹根目录下，也就是first_project。</li><li>进入web_server，然后输入：”bin\component.bat”。</li><li>接着后退到web_server文件夹下，执行”node app”。    </li></ul><p>10、在chrome（嘿嘿，谷歌）浏览器打开网页</p><ul><li>在上一步，你应该能得到一串字符，虽然你看不懂是什么，但在最后应该写的是”Please log on <a href="http://127.0.0.1:3001/index.html&quot;，那么输入后面的网址，显示下面的图片。" target="_blank" rel="noopener">http://127.0.0.1:3001/index.html&quot;，那么输入后面的网址，显示下面的图片。</a></li></ul><p><img src="http://img.blog.csdn.net/20170802184311093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU19jbGlmZnRvcA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="你瞅啥">    </p><p>11、点击那个按钮”Test Game Server”</p><ul><li>点击后，之前输入”pomelo start”的那个命令行窗口会输出DEBUG和INFO信息，并且网页显示”game server is ok”就表示ok 。    </li></ul><p>12、查看已经启动的服务器</p><ul><li>新建命令行窗口，输入”pomelo list”查看已经启动的服务器 。<ul><li>serverId：服务器的serverId，同config配置表中的id 。</li><li>serverType：服务器的serverType，同config配置表中的type 。</li><li>pid：服务器对应的进程pid 。</li><li>rss：实际使用的物理内存（单位：M）。</li><li>heapTotal：堆总共占用的大小（单位：M）。</li><li>headUsed：该服务器已经使用的堆大小（单位：M）。</li><li>uptime：该服务器启动时长（单位：Min）。</li></ul></li></ul><p>13、关闭项目</p><ul><li>进入到该项目的game-server文件夹下 。</li><li>输入”pomelo stop”或”pomelo kill”，会显示如下图（不是连输了两次命令，只要一个就够了，我只是示范，启动了两次用了不同命令关闭的，尽量使用”pomelo stop”，安全退出）：</li></ul><p><img src="http://img.blog.csdn.net/20170803134051124?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU19jbGlmZnRvcA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="pomelo页面"><br><br><hr><br>大体就是这样，细节什么的我会一直检查修改，或许遇到更简便的方法会再更新，如果步骤有错或缺少也可以提出来，谢谢。<br><br><hr></p><p>最后，我还想说两句，但不知道该说什么，homie来个freestyle：<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yo，check it，check it，你看这个开发环境需要配置这么多，就像那个软件安装步骤也要那么多，yeah，peace！！<br></p><p> /—我覺得OK—/ /—我覺得不行—/ /—我覺得可以—/ /—我覺得很普通—/ /—他一定可以，你這樣做有失公正—/ /—糖糖先給他過—/<br> <br><br>我觉得在很稳定的发挥后得到这样的一个评价，我觉得我情绪有点失控 。<br><br><br><br></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Pomelo 是基于 Node.js 的高性能、分布式游戏服务器框架。它包括基础的开发框架和相关的扩展组件（库和工具包），可以帮助你省去游戏开发枯燥中的重复劳动和底层逻辑的开发。以上为百度，我综合了很多，写一个比较全的搭建开发环境的步骤，下面开始介绍安装什么，该怎么安装，以及安装后怎么运行和关闭。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;老规矩，先放所需要的链接，后面还会重复： &lt;ul&gt;
-&lt;li&gt;Python :&lt;a href=&quot;https://www.python.org/downloads/windows/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.python.org/downloads/windows/&lt;/a&gt; 。&lt;/li&gt;
-&lt;li&gt;Node.js：&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://nodejs.org/en/&lt;/a&gt; 。&lt;/li&gt;
-&lt;li&gt;Git：&lt;a href=&quot;https://git-for-windows.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://git-for-windows.github.io/&lt;/a&gt; 。（如果下载不动，用我的百度云盘[最新更新日期17.8.4，Git版本Git_2.14.0.2]：&lt;a href=&quot;http://pan.baidu.com/s/1i5j7i9B&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://pan.baidu.com/s/1i5j7i9B&lt;/a&gt;  密码：83e9）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-
-&lt;p&gt;先输入命令行检查一下是否有安装过：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="windows" scheme="https://www.sclifftop.com/tags/windows/"/>
-    
-      <category term="pomelo环境" scheme="https://www.sclifftop.com/tags/pomelo%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
