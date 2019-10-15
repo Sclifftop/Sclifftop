@@ -44,33 +44,7 @@ var _hmt = _hmt || [];
 
 
 <script>
-(function() {
-	var arr = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
-        var aIndex = 0;
-			
-			document.onmousemove = function (ev) {
-			
-            var oEvent = ev || event;
-            var tSpan = document.createElement('span');
-            aIndex = (aIndex + 1) % arr.length;
-            var sTxt = document.createTextNode(arr[aIndex]);
-            tSpan.appendChild(sTxt);
-            tSpan.style.left = (oEvent.clientX - 35) + 'px';  
-            tSpan.style.top = (oEvent.clientY - 20) + 'px';  
-            tSpan.style.position = 'absolute'; 
-            tSpan.style.width = '34px'; 
-            tSpan.style.height = '17px'; 
-            tSpan.style.fontWeight = "bold";
-            tSpan.style.color = "#2B9499";
-			tSpan.style.fontSize = 20;
-			tSpan.style.opacity = 0.76;
-            tSpan.style.zIndex = 9999999999999999;
-            document.body.appendChild(tSpan);
-            setTimeout(function () {
-                document.body.removeChild(tSpan);
-            }, 380)
-        }
-})();
+
 </script>
 
 
